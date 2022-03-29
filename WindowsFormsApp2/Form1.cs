@@ -17,6 +17,12 @@ using System.Net;
 using Newtonsoft.Json.Linq;
 using System.Threading;
 using System.Web;
+using System.Net.Sockets;
+
+/*
+* 8000번 포트 리스닝을 위한 선행 작업 
+* netsh http add urlacl url=http://*:8000/ user=everyone
+*/
 
 namespace WindowsFormsApp2
 {
@@ -389,6 +395,8 @@ namespace WindowsFormsApp2
             tc021401,
 
         }
+
+        string svrState = "STOP";
 
         string dataIN = string.Empty;
         string nextcommand = string.Empty;    //OK를 받은 후 전송할 명령어가 존재하는 경우
@@ -5320,14 +5328,6 @@ namespace WindowsFormsApp2
             string retStr = DeviceHttpRequest(header, string.Empty);
         }
 
-        private void button65_Click_1(object sender, EventArgs e)
-        {
-            if (dev.remoteCSEName != string.Empty)
-                DevAcpUpdate("47", "*");
-            else
-                MessageBox.Show("단말인증파라미터 세팅하세요");
-        }
-
         private void DevAcpUpdate(string mode, string owner)
         {
             ReqHeader header = new ReqHeader();
@@ -5432,6 +5432,265 @@ namespace WindowsFormsApp2
                 serialPort1.RtsEnable = true;
             else
                 serialPort1.RtsEnable = false;
+        }
+
+        /***** 아래부터는 Http Server 관련 *****/
+        HttpListener listener;
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("----------서비스 서버 설정----------");
+            if (svrState == "STOP")
+            {
+                StartHttpServer();
+                svrState = "RUN";
+                btn.Text = "서버 동작중(중지)";
+            }
+            else
+            {
+                StopHttpServer();
+                svrState = "STOP";
+                btn.Text = "서버 시작";
+            }
+        }
+
+        // This example requires the System and System.Net namespaces.
+        public static void SimpleListenerExample(string[] prefixes)
+        {
+            if (!HttpListener.IsSupported)
+            {
+                Console.WriteLine("Windows XP SP2 or Server 2003 is required to use the HttpListener class.");
+                return;
+            }
+            // URI prefixes are required,
+            // for example "http://contoso.com:8080/index/".
+            if (prefixes == null || prefixes.Length == 0)
+                throw new ArgumentException("prefixes");
+
+            // Create a listener.
+            HttpListener listener = new HttpListener();
+            // Add the prefixes.
+            foreach (string s in prefixes)
+            {
+                listener.Prefixes.Add(s);
+            }
+            listener.Start();
+            Console.WriteLine("Listening...");
+            // Note: The GetContext method blocks while waiting for a request.
+            HttpListenerContext context = listener.GetContext();
+            HttpListenerRequest request = context.Request;
+            // Obtain a response object.
+            HttpListenerResponse response = context.Response;
+            // Construct a response.
+            string responseString = "<HTML><BODY> Hello world!</BODY></HTML>";
+            byte[] buffer = System.Text.Encoding.UTF8.GetBytes(responseString);
+            // Get a response stream and write the response to it.
+            response.ContentLength64 = buffer.Length;
+            System.IO.Stream output = response.OutputStream;
+            output.Write(buffer, 0, buffer.Length);
+            // You must close the output stream.
+            output.Close();
+            listener.Stop();
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (svrState != "STOP")
+            {
+                StopHttpServer();
+            }
+        }
+        private void StartHttpServer()
+        {
+            listener = new HttpListener();
+            listener.Prefixes.Add("http://+:8000/");
+            listener.Start();
+            listener.BeginGetContext(this.OnRequested, this.listener);
+            Console.WriteLine("StartHttpServer");
+        }
+
+        private void StopHttpServer()
+        {
+            this.listener.Close();
+        }
+
+        private void OnRequested(IAsyncResult result)
+        {
+            HttpListener listener = (HttpListener)result.AsyncState;
+            if (!listener.IsListening)
+            {
+                Console.WriteLine("listening finished.");
+                return;
+            }
+
+            Console.WriteLine("OnRequested start.");
+            Console.WriteLine("OnRequested result.IsCompleted " + result.IsCompleted);
+            Console.WriteLine("OnRequested result.CompletedSynchronously " + result.CompletedSynchronously);
+            Console.WriteLine("OnRequested listener.IsListening " + listener.IsListening);
+
+            HttpListenerContext ctx = listener.EndGetContext(result);
+            HttpListenerRequest req = null;
+            HttpListenerResponse res = null;
+            StreamReader reader = null;
+            StreamWriter writer = null;
+
+            try
+            {
+                req = ctx.Request;
+                res = ctx.Response;
+
+                DisplayWebHeaderCollection(req);
+
+                reader = new StreamReader(req.InputStream);
+                writer = new StreamWriter(res.OutputStream);
+
+                string received = reader.ReadToEnd();
+                if (received != string.Empty)
+                {
+                    Console.WriteLine("[ 수신 데이터 ]");
+                    Console.WriteLine(received);
+                    ParsingJson(received, req.Url.AbsolutePath);
+                }
+                //writer.Write(received);
+                //writer.Flush();       
+
+                //res.StatusCode = (int)HttpStatusCode.NotFound;
+                res.Headers.Add("X-M2M-RI", "response_1");
+                res.Headers.Add("X-M2M-RSC", "2000");
+                res.StatusCode = (int)HttpStatusCode.OK;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                try
+                {
+                    if (null != writer) writer.Close();
+                    if (null != reader) reader.Close();
+                    if (null != res) res.Close();  // close할 때 응답이 완료됨..
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+            }
+
+            listener.BeginGetContext(this.OnRequested, listener);
+        }
+        public void DisplayWebHeaderCollection(HttpListenerRequest request)
+        {
+            Console.WriteLine("[ request.Url.AbsolutePath ]");
+            Console.WriteLine("   " + request.Url.AbsolutePath);
+
+            System.Collections.Specialized.NameValueCollection headers = request.Headers;
+
+            foreach (string key in headers.AllKeys)
+            {
+                string[] values = headers.GetValues(key);
+                if (values.Length > 0)
+                {
+                    Console.WriteLine("[ " + key + " ]");
+                    foreach (string value in values)
+                    {
+                        Console.WriteLine("   " + value);
+                    }
+                }
+                else
+                    Console.WriteLine("There is no value associated with the header.");
+            }
+        }
+
+        private void ParsingJson(string jsonStr, string path)
+        {
+            try
+            {
+                JObject obj = JObject.Parse(jsonStr);
+                if (path == "/" + svr.entityId + "/10250/0/0") // 데이터 수신
+                {
+                    string temp = obj["nev"]["rep"]["m2m:cin"]["con"].ToString();
+                    string data = Encoding.UTF8.GetString(Convert.FromBase64String(temp));
+                    string deviceEntityId = obj["cr"].ToString();
+                    if (data != string.Empty)
+                        Console.WriteLine("[" + deviceEntityId + "][데이터 수신]" + data);
+                }
+                else if (path == "/" + svr.entityId + "/bs") // 부트스트랩
+                {
+                    string deviceEntityId = obj["cr"].ToString();
+                    Console.WriteLine("[" + deviceEntityId + "] Bootstrap 요청 수신");
+                }
+                else if (path == "/" + svr.entityId + "/rd") // 레지스터
+                {
+                    string deviceEntityId = obj["cr"].ToString();
+                    Console.WriteLine("[" + deviceEntityId + "] Registration 요청 수신");
+                }
+                else
+                {
+                    Console.WriteLine("[ParsingJson] path = " + path);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        private void btnUDPServer_Click(object sender, EventArgs e)
+        {
+            // Bind()
+            IPEndPoint ipep = new IPEndPoint(IPAddress.Any, 5555);
+            Socket server = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+            server.Bind(ipep);
+
+            Console.WriteLine("UDP Server Start");
+
+            IPEndPoint udpsender = new IPEndPoint(IPAddress.Any, 0);
+            EndPoint remote = (EndPoint)(udpsender);
+
+            byte[] _data = new byte[1024];
+
+            // ReceiveFrom()
+            server.ReceiveFrom(_data, ref remote);
+            Console.WriteLine("{0} : \r\nServar Recieve Data : {1}", remote.ToString(),
+                Encoding.Default.GetString(_data));
+
+            // string --> byte[]
+            _data = Encoding.Default.GetBytes("Client SendTo Data");
+
+            // SendTo()
+            server.SendTo(_data, _data.Length, SocketFlags.None, remote);
+
+            // Close()
+            server.Close();
+
+            Console.WriteLine("UDP Server Stop");
+        }
+
+        private void btnUDPClient_Click(object sender, EventArgs e)
+        {
+            IPEndPoint ipep = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 5555);
+            Socket client = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+
+            // string --> byte[]
+            byte[] _data = Encoding.Default.GetBytes("Server SendTo Data");
+
+            // Connect() 후 Send() 가능
+
+            // SendTo()
+            client.SendTo(_data, _data.Length, SocketFlags.None, ipep);
+
+            IPEndPoint udpsender = new IPEndPoint(IPAddress.Any, 0);
+            EndPoint remote = (EndPoint)(udpsender);
+
+            _data = new byte[1024];
+
+            // ReceiveFrom()
+            client.ReceiveFrom(_data, ref remote);
+            Console.WriteLine("{0} : \r\nClient Receive Data : {1}", remote.ToString(),
+                Encoding.Default.GetString(_data));
+
+            // Close()
+            client.Close();
         }
     }
 

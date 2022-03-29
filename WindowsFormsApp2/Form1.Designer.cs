@@ -93,6 +93,8 @@
             this.button90 = new System.Windows.Forms.Button();
             this.button91 = new System.Windows.Forms.Button();
             this.tabModule = new System.Windows.Forms.TabPage();
+            this.btnUDPClient = new System.Windows.Forms.Button();
+            this.btnUDPServer = new System.Windows.Forms.Button();
             this.groupBox28 = new System.Windows.Forms.GroupBox();
             this.listView11 = new System.Windows.Forms.ListView();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -122,6 +124,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button75 = new System.Windows.Forms.Button();
             this.tabServer = new System.Windows.Forms.TabPage();
+            this.btn = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
@@ -877,6 +880,8 @@
             // 
             // tabModule
             // 
+            this.tabModule.Controls.Add(this.btnUDPClient);
+            this.tabModule.Controls.Add(this.btnUDPServer);
             this.tabModule.Controls.Add(this.groupBox28);
             this.tabModule.Controls.Add(this.groupBox8);
             this.tabModule.Controls.Add(this.groupBox27);
@@ -888,6 +893,26 @@
             this.tabModule.TabIndex = 10;
             this.tabModule.Text = " 디바이스 ";
             this.tabModule.UseVisualStyleBackColor = true;
+            // 
+            // btnUDPClient
+            // 
+            this.btnUDPClient.Location = new System.Drawing.Point(226, 505);
+            this.btnUDPClient.Name = "btnUDPClient";
+            this.btnUDPClient.Size = new System.Drawing.Size(121, 20);
+            this.btnUDPClient.TabIndex = 90;
+            this.btnUDPClient.Text = "UDP 디바이스";
+            this.btnUDPClient.UseVisualStyleBackColor = true;
+            this.btnUDPClient.Click += new System.EventHandler(this.btnUDPClient_Click);
+            // 
+            // btnUDPServer
+            // 
+            this.btnUDPServer.Location = new System.Drawing.Point(38, 505);
+            this.btnUDPServer.Name = "btnUDPServer";
+            this.btnUDPServer.Size = new System.Drawing.Size(121, 20);
+            this.btnUDPServer.TabIndex = 89;
+            this.btnUDPServer.Text = "UDP 서버";
+            this.btnUDPServer.UseVisualStyleBackColor = true;
+            this.btnUDPServer.Click += new System.EventHandler(this.btnUDPServer_Click);
             // 
             // groupBox28
             // 
@@ -923,9 +948,9 @@
             this.groupBox8.Controls.Add(this.button57);
             this.groupBox8.Controls.Add(this.button58);
             this.groupBox8.Controls.Add(this.button59);
-            this.groupBox8.Location = new System.Drawing.Point(13, 421);
+            this.groupBox8.Location = new System.Drawing.Point(13, 325);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(472, 172);
+            this.groupBox8.Size = new System.Drawing.Size(472, 143);
             this.groupBox8.TabIndex = 88;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "oneM2M Firmware";
@@ -1163,7 +1188,7 @@
             this.groupBox25.Controls.Add(this.button75);
             this.groupBox25.Location = new System.Drawing.Point(13, 250);
             this.groupBox25.Name = "groupBox25";
-            this.groupBox25.Size = new System.Drawing.Size(472, 157);
+            this.groupBox25.Size = new System.Drawing.Size(472, 63);
             this.groupBox25.TabIndex = 86;
             this.groupBox25.TabStop = false;
             this.groupBox25.Text = "oneM2M DATA";
@@ -1180,7 +1205,7 @@
             // 
             // button75
             // 
-            this.button75.Location = new System.Drawing.Point(23, 129);
+            this.button75.Location = new System.Drawing.Point(23, 23);
             this.button75.Name = "button75";
             this.button75.Size = new System.Drawing.Size(121, 20);
             this.button75.TabIndex = 42;
@@ -1190,6 +1215,7 @@
             // 
             // tabServer
             // 
+            this.tabServer.Controls.Add(this.btn);
             this.tabServer.Controls.Add(this.label23);
             this.tabServer.Controls.Add(this.label25);
             this.tabServer.Controls.Add(this.groupBox12);
@@ -1206,6 +1232,16 @@
             this.tabServer.TabIndex = 6;
             this.tabServer.Text = " 서비스서버 ";
             this.tabServer.UseVisualStyleBackColor = true;
+            // 
+            // btn
+            // 
+            this.btn.Location = new System.Drawing.Point(27, 273);
+            this.btn.Name = "btn";
+            this.btn.Size = new System.Drawing.Size(127, 46);
+            this.btn.TabIndex = 78;
+            this.btn.Text = "서버 시작";
+            this.btn.UseVisualStyleBackColor = true;
+            this.btn.Click += new System.EventHandler(this.button1_Click);
             // 
             // label23
             // 
@@ -1260,16 +1296,16 @@
             this.groupBox14.Controls.Add(this.lbdevicever);
             this.groupBox14.Controls.Add(this.label7);
             this.groupBox14.Controls.Add(this.label14);
-            this.groupBox14.Location = new System.Drawing.Point(8, 249);
+            this.groupBox14.Location = new System.Drawing.Point(8, 381);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(461, 251);
+            this.groupBox14.Size = new System.Drawing.Size(461, 147);
             this.groupBox14.TabIndex = 47;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "oneM2M Device DATA";
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(147, 140);
+            this.label2.Location = new System.Drawing.Point(147, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(242, 22);
             this.label2.TabIndex = 87;
@@ -1283,7 +1319,7 @@
             "1. fwr-m2m_",
             "2. fwr-m2m_M",
             "3. fwr-m2m_M_"});
-            this.comboBox2.Location = new System.Drawing.Point(152, 213);
+            this.comboBox2.Location = new System.Drawing.Point(152, 102);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(244, 20);
@@ -1292,7 +1328,7 @@
             // 
             // label13
             // 
-            this.label13.Location = new System.Drawing.Point(15, 211);
+            this.label13.Location = new System.Drawing.Point(15, 100);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(126, 22);
             this.label13.TabIndex = 83;
@@ -1301,7 +1337,7 @@
             // 
             // button94
             // 
-            this.button94.Location = new System.Drawing.Point(15, 140);
+            this.button94.Location = new System.Drawing.Point(15, 29);
             this.button94.Name = "button94";
             this.button94.Size = new System.Drawing.Size(126, 23);
             this.button94.TabIndex = 79;
@@ -1311,7 +1347,7 @@
             // 
             // lbmodemfwrver
             // 
-            this.lbmodemfwrver.Location = new System.Drawing.Point(210, 192);
+            this.lbmodemfwrver.Location = new System.Drawing.Point(210, 81);
             this.lbmodemfwrver.Name = "lbmodemfwrver";
             this.lbmodemfwrver.Size = new System.Drawing.Size(164, 16);
             this.lbmodemfwrver.TabIndex = 43;
@@ -1320,7 +1356,7 @@
             // 
             // btnDeviceCheck
             // 
-            this.btnDeviceCheck.Location = new System.Drawing.Point(15, 171);
+            this.btnDeviceCheck.Location = new System.Drawing.Point(15, 60);
             this.btnDeviceCheck.Name = "btnDeviceCheck";
             this.btnDeviceCheck.Size = new System.Drawing.Size(126, 37);
             this.btnDeviceCheck.TabIndex = 40;
@@ -1330,7 +1366,7 @@
             // 
             // lbdevicever
             // 
-            this.lbdevicever.Location = new System.Drawing.Point(210, 171);
+            this.lbdevicever.Location = new System.Drawing.Point(210, 60);
             this.lbdevicever.Name = "lbdevicever";
             this.lbdevicever.Size = new System.Drawing.Size(164, 16);
             this.lbdevicever.TabIndex = 45;
@@ -1339,7 +1375,7 @@
             // 
             // label7
             // 
-            this.label7.Location = new System.Drawing.Point(147, 171);
+            this.label7.Location = new System.Drawing.Point(147, 60);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 16);
             this.label7.TabIndex = 46;
@@ -1348,7 +1384,7 @@
             // 
             // label14
             // 
-            this.label14.Location = new System.Drawing.Point(150, 190);
+            this.label14.Location = new System.Drawing.Point(150, 79);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(60, 17);
             this.label14.TabIndex = 44;
@@ -1900,6 +1936,7 @@
             this.Name = "Form1";
             this.Text = "LGU+ oneM2M";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.Form1_Shown);
             this.panel1.ResumeLayout(false);
@@ -2098,6 +2135,9 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TabPage webpage;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.Button btn;
+        private System.Windows.Forms.Button btnUDPClient;
+        private System.Windows.Forms.Button btnUDPServer;
     }
 }
 
