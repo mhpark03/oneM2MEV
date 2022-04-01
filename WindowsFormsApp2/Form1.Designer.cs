@@ -28,70 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.cBoxBaudRate = new System.Windows.Forms.ComboBox();
-            this.cBoxCOMPORT = new System.Windows.Forms.ComboBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbRTS = new System.Windows.Forms.CheckBox();
-            this.cbDTR = new System.Windows.Forms.CheckBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabCOM = new System.Windows.Forms.TabPage();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.groupBox23 = new System.Windows.Forms.GroupBox();
-            this.button128 = new System.Windows.Forms.Button();
-            this.textBox81 = new System.Windows.Forms.TextBox();
-            this.button121 = new System.Windows.Forms.Button();
-            this.textBox80 = new System.Windows.Forms.TextBox();
-            this.button120 = new System.Windows.Forms.Button();
-            this.textBox79 = new System.Windows.Forms.TextBox();
-            this.button63 = new System.Windows.Forms.Button();
-            this.textBox64 = new System.Windows.Forms.TextBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.button119 = new System.Windows.Forms.Button();
-            this.textBox78 = new System.Windows.Forms.TextBox();
-            this.button86 = new System.Windows.Forms.Button();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.button99 = new System.Windows.Forms.Button();
-            this.textBox58 = new System.Windows.Forms.TextBox();
-            this.button100 = new System.Windows.Forms.Button();
-            this.textBox59 = new System.Windows.Forms.TextBox();
-            this.button101 = new System.Windows.Forms.Button();
-            this.textBox60 = new System.Windows.Forms.TextBox();
-            this.textBox61 = new System.Windows.Forms.TextBox();
-            this.button62 = new System.Windows.Forms.Button();
-            this.gbDeviceLog = new System.Windows.Forms.GroupBox();
-            this.listView3 = new System.Windows.Forms.ListView();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.lbModemVer = new System.Windows.Forms.TextBox();
-            this.textBox89 = new System.Windows.Forms.TextBox();
-            this.lbIccid = new System.Windows.Forms.TextBox();
-            this.textBox87 = new System.Windows.Forms.TextBox();
-            this.textBox86 = new System.Windows.Forms.TextBox();
-            this.button87 = new System.Windows.Forms.Button();
-            this.textBox85 = new System.Windows.Forms.TextBox();
-            this.textBox57 = new System.Windows.Forms.TextBox();
-            this.textBox40 = new System.Windows.Forms.TextBox();
-            this.textBox38 = new System.Windows.Forms.TextBox();
-            this.textBox33 = new System.Windows.Forms.TextBox();
-            this.button71 = new System.Windows.Forms.Button();
-            this.button83 = new System.Windows.Forms.Button();
-            this.textBox44 = new System.Windows.Forms.TextBox();
-            this.button88 = new System.Windows.Forms.Button();
-            this.textBox45 = new System.Windows.Forms.TextBox();
-            this.textBox46 = new System.Windows.Forms.TextBox();
-            this.textBox47 = new System.Windows.Forms.TextBox();
-            this.textBox48 = new System.Windows.Forms.TextBox();
-            this.textBox49 = new System.Windows.Forms.TextBox();
-            this.button89 = new System.Windows.Forms.Button();
-            this.button90 = new System.Windows.Forms.Button();
-            this.button91 = new System.Windows.Forms.Button();
             this.tabModule = new System.Windows.Forms.TabPage();
             this.btnUDPClient = new System.Windows.Forms.Button();
             this.btnUDPServer = new System.Windows.Forms.Button();
@@ -179,9 +117,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.webpage = new System.Windows.Forms.TabPage();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.button81 = new System.Windows.Forms.Button();
-            this.button72 = new System.Windows.Forms.Button();
-            this.lbActionState = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.tBoxDeviceVer = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
@@ -190,15 +125,8 @@
             this.label31 = new System.Windows.Forms.Label();
             this.tBoxDeviceModel = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabCOM.SuspendLayout();
-            this.groupBox23.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            this.gbDeviceLog.SuspendLayout();
-            this.groupBox10.SuspendLayout();
             this.tabModule.SuspendLayout();
             this.groupBox28.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -213,67 +141,14 @@
             this.webpage.SuspendLayout();
             this.SuspendLayout();
             // 
-            // cBoxBaudRate
-            // 
-            this.cBoxBaudRate.FormattingEnabled = true;
-            this.cBoxBaudRate.Items.AddRange(new object[] {
-            "2400",
-            "4800",
-            "9600",
-            "38400",
-            "76800",
-            "115200"});
-            this.cBoxBaudRate.Location = new System.Drawing.Point(120, 12);
-            this.cBoxBaudRate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cBoxBaudRate.Name = "cBoxBaudRate";
-            this.cBoxBaudRate.Size = new System.Drawing.Size(66, 20);
-            this.cBoxBaudRate.TabIndex = 2;
-            this.cBoxBaudRate.Text = "115200";
-            // 
-            // cBoxCOMPORT
-            // 
-            this.cBoxCOMPORT.FormattingEnabled = true;
-            this.cBoxCOMPORT.Items.AddRange(new object[] {
-            "COM103"});
-            this.cBoxCOMPORT.Location = new System.Drawing.Point(35, 12);
-            this.cBoxCOMPORT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cBoxCOMPORT.Name = "cBoxCOMPORT";
-            this.cBoxCOMPORT.Size = new System.Drawing.Size(80, 20);
-            this.cBoxCOMPORT.TabIndex = 1;
-            this.cBoxCOMPORT.Text = "COM103";
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.progressBar1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.progressBar1.Location = new System.Drawing.Point(12, 12);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(19, 18);
-            this.progressBar1.TabIndex = 2;
-            this.progressBar1.Click += new System.EventHandler(this.ProgressBar1_Click);
-            // 
-            // serialPort1
-            // 
-            this.serialPort1.BaudRate = 115200;
-            this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.SerialPort1_DataReceived);
-            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.cbRTS);
-            this.panel1.Controls.Add(this.cbDTR);
             this.panel1.Controls.Add(this.tabControl1);
-            this.panel1.Controls.Add(this.button81);
-            this.panel1.Controls.Add(this.button72);
-            this.panel1.Controls.Add(this.lbActionState);
-            this.panel1.Controls.Add(this.progressBar1);
-            this.panel1.Controls.Add(this.cBoxBaudRate);
             this.panel1.Controls.Add(this.label30);
             this.panel1.Controls.Add(this.tBoxDeviceVer);
             this.panel1.Controls.Add(this.label34);
             this.panel1.Controls.Add(this.tbSvcCd);
             this.panel1.Controls.Add(this.tBoxDeviceSN);
-            this.panel1.Controls.Add(this.cBoxCOMPORT);
             this.panel1.Controls.Add(this.label31);
             this.panel1.Controls.Add(this.tBoxDeviceModel);
             this.panel1.Controls.Add(this.label32);
@@ -284,38 +159,11 @@
             this.panel1.Size = new System.Drawing.Size(1195, 804);
             this.panel1.TabIndex = 10;
             // 
-            // cbRTS
-            // 
-            this.cbRTS.AutoSize = true;
-            this.cbRTS.Checked = true;
-            this.cbRTS.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbRTS.Location = new System.Drawing.Point(246, 14);
-            this.cbRTS.Name = "cbRTS";
-            this.cbRTS.Size = new System.Drawing.Size(48, 16);
-            this.cbRTS.TabIndex = 80;
-            this.cbRTS.Text = "RTS";
-            this.cbRTS.UseVisualStyleBackColor = true;
-            this.cbRTS.CheckedChanged += new System.EventHandler(this.cbRTS_CheckedChanged);
-            // 
-            // cbDTR
-            // 
-            this.cbDTR.AutoSize = true;
-            this.cbDTR.Checked = true;
-            this.cbDTR.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbDTR.Location = new System.Drawing.Point(192, 15);
-            this.cbDTR.Name = "cbDTR";
-            this.cbDTR.Size = new System.Drawing.Size(48, 16);
-            this.cbDTR.TabIndex = 79;
-            this.cbDTR.Text = "DTR";
-            this.cbDTR.UseVisualStyleBackColor = true;
-            this.cbDTR.CheckedChanged += new System.EventHandler(this.cbDTR_CheckedChanged);
-            // 
             // tabControl1
             // 
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabCOM);
             this.tabControl1.Controls.Add(this.tabModule);
             this.tabControl1.Controls.Add(this.tabServer);
             this.tabControl1.Controls.Add(this.tabLOG);
@@ -326,557 +174,6 @@
             this.tabControl1.Size = new System.Drawing.Size(1180, 758);
             this.tabControl1.TabIndex = 44;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
-            // 
-            // tabCOM
-            // 
-            this.tabCOM.Controls.Add(this.textBox2);
-            this.tabCOM.Controls.Add(this.textBox1);
-            this.tabCOM.Controls.Add(this.groupBox23);
-            this.tabCOM.Controls.Add(this.groupBox9);
-            this.tabCOM.Controls.Add(this.gbDeviceLog);
-            this.tabCOM.Controls.Add(this.groupBox10);
-            this.tabCOM.Location = new System.Drawing.Point(4, 22);
-            this.tabCOM.Name = "tabCOM";
-            this.tabCOM.Size = new System.Drawing.Size(1172, 732);
-            this.tabCOM.TabIndex = 3;
-            this.tabCOM.Text = " 모뎀정보 ";
-            this.tabCOM.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(535, 18);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(147, 21);
-            this.textBox2.TabIndex = 72;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(688, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(479, 21);
-            this.textBox1.TabIndex = 71;
-            // 
-            // groupBox23
-            // 
-            this.groupBox23.Controls.Add(this.button128);
-            this.groupBox23.Controls.Add(this.textBox81);
-            this.groupBox23.Controls.Add(this.button121);
-            this.groupBox23.Controls.Add(this.textBox80);
-            this.groupBox23.Controls.Add(this.button120);
-            this.groupBox23.Controls.Add(this.textBox79);
-            this.groupBox23.Controls.Add(this.button63);
-            this.groupBox23.Controls.Add(this.textBox64);
-            this.groupBox23.Location = new System.Drawing.Point(24, 588);
-            this.groupBox23.Name = "groupBox23";
-            this.groupBox23.Size = new System.Drawing.Size(490, 141);
-            this.groupBox23.TabIndex = 70;
-            this.groupBox23.TabStop = false;
-            this.groupBox23.Text = "기타 AT command";
-            // 
-            // button128
-            // 
-            this.button128.Location = new System.Drawing.Point(7, 101);
-            this.button128.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button128.Name = "button128";
-            this.button128.Size = new System.Drawing.Size(147, 24);
-            this.button128.TabIndex = 75;
-            this.button128.Text = "ATCMD 4";
-            this.button128.UseVisualStyleBackColor = true;
-            this.button128.Click += new System.EventHandler(this.button128_Click);
-            // 
-            // textBox81
-            // 
-            this.textBox81.Location = new System.Drawing.Point(157, 101);
-            this.textBox81.Name = "textBox81";
-            this.textBox81.Size = new System.Drawing.Size(310, 21);
-            this.textBox81.TabIndex = 74;
-            // 
-            // button121
-            // 
-            this.button121.Location = new System.Drawing.Point(7, 75);
-            this.button121.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button121.Name = "button121";
-            this.button121.Size = new System.Drawing.Size(147, 24);
-            this.button121.TabIndex = 73;
-            this.button121.Text = "ATCMD 3";
-            this.button121.UseVisualStyleBackColor = true;
-            this.button121.Click += new System.EventHandler(this.button121_Click);
-            // 
-            // textBox80
-            // 
-            this.textBox80.Location = new System.Drawing.Point(157, 75);
-            this.textBox80.Name = "textBox80";
-            this.textBox80.Size = new System.Drawing.Size(310, 21);
-            this.textBox80.TabIndex = 72;
-            // 
-            // button120
-            // 
-            this.button120.Location = new System.Drawing.Point(7, 47);
-            this.button120.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button120.Name = "button120";
-            this.button120.Size = new System.Drawing.Size(147, 24);
-            this.button120.TabIndex = 71;
-            this.button120.Text = "ATCMD 2";
-            this.button120.UseVisualStyleBackColor = true;
-            this.button120.Click += new System.EventHandler(this.button120_Click);
-            // 
-            // textBox79
-            // 
-            this.textBox79.Location = new System.Drawing.Point(157, 47);
-            this.textBox79.Name = "textBox79";
-            this.textBox79.Size = new System.Drawing.Size(310, 21);
-            this.textBox79.TabIndex = 70;
-            // 
-            // button63
-            // 
-            this.button63.Location = new System.Drawing.Point(7, 19);
-            this.button63.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button63.Name = "button63";
-            this.button63.Size = new System.Drawing.Size(147, 24);
-            this.button63.TabIndex = 69;
-            this.button63.Text = "ATCMD 1";
-            this.button63.UseVisualStyleBackColor = true;
-            this.button63.Click += new System.EventHandler(this.button63_Click_1);
-            // 
-            // textBox64
-            // 
-            this.textBox64.Location = new System.Drawing.Point(157, 19);
-            this.textBox64.Name = "textBox64";
-            this.textBox64.Size = new System.Drawing.Size(310, 21);
-            this.textBox64.TabIndex = 68;
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.button119);
-            this.groupBox9.Controls.Add(this.textBox78);
-            this.groupBox9.Controls.Add(this.button86);
-            this.groupBox9.Controls.Add(this.textBox24);
-            this.groupBox9.Controls.Add(this.button99);
-            this.groupBox9.Controls.Add(this.textBox58);
-            this.groupBox9.Controls.Add(this.button100);
-            this.groupBox9.Controls.Add(this.textBox59);
-            this.groupBox9.Controls.Add(this.button101);
-            this.groupBox9.Controls.Add(this.textBox60);
-            this.groupBox9.Controls.Add(this.textBox61);
-            this.groupBox9.Controls.Add(this.button62);
-            this.groupBox9.Location = new System.Drawing.Point(24, 378);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(490, 202);
-            this.groupBox9.TabIndex = 59;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "NW CONTROL";
-            // 
-            // button119
-            // 
-            this.button119.Location = new System.Drawing.Point(6, 103);
-            this.button119.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button119.Name = "button119";
-            this.button119.Size = new System.Drawing.Size(147, 24);
-            this.button119.TabIndex = 62;
-            this.button119.Text = "CONNECT STATE";
-            this.button119.UseVisualStyleBackColor = true;
-            this.button119.Click += new System.EventHandler(this.button119_Click);
-            // 
-            // textBox78
-            // 
-            this.textBox78.Location = new System.Drawing.Point(157, 103);
-            this.textBox78.Name = "textBox78";
-            this.textBox78.Size = new System.Drawing.Size(310, 21);
-            this.textBox78.TabIndex = 63;
-            this.textBox78.Text = "AT+CGATT?";
-            // 
-            // button86
-            // 
-            this.button86.Location = new System.Drawing.Point(6, 19);
-            this.button86.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button86.Name = "button86";
-            this.button86.Size = new System.Drawing.Size(147, 24);
-            this.button86.TabIndex = 48;
-            this.button86.Text = "DATA REBOOT";
-            this.button86.UseVisualStyleBackColor = true;
-            this.button86.Click += new System.EventHandler(this.button86_Click);
-            // 
-            // textBox24
-            // 
-            this.textBox24.Location = new System.Drawing.Point(157, 19);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(310, 21);
-            this.textBox24.TabIndex = 49;
-            this.textBox24.Text = "AT+NRB";
-            // 
-            // button99
-            // 
-            this.button99.Location = new System.Drawing.Point(5, 138);
-            this.button99.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button99.Name = "button99";
-            this.button99.Size = new System.Drawing.Size(147, 24);
-            this.button99.TabIndex = 54;
-            this.button99.Text = "NW ATTACH";
-            this.button99.UseVisualStyleBackColor = true;
-            this.button99.Click += new System.EventHandler(this.button99_Click);
-            // 
-            // textBox58
-            // 
-            this.textBox58.Location = new System.Drawing.Point(156, 138);
-            this.textBox58.Name = "textBox58";
-            this.textBox58.Size = new System.Drawing.Size(310, 21);
-            this.textBox58.TabIndex = 55;
-            this.textBox58.Text = "AT+CEREG=3";
-            // 
-            // button100
-            // 
-            this.button100.Location = new System.Drawing.Point(6, 47);
-            this.button100.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button100.Name = "button100";
-            this.button100.Size = new System.Drawing.Size(147, 24);
-            this.button100.TabIndex = 56;
-            this.button100.Text = "DATA CONNECT";
-            this.button100.UseVisualStyleBackColor = true;
-            this.button100.Click += new System.EventHandler(this.button100_Click);
-            // 
-            // textBox59
-            // 
-            this.textBox59.Location = new System.Drawing.Point(157, 47);
-            this.textBox59.Name = "textBox59";
-            this.textBox59.Size = new System.Drawing.Size(310, 21);
-            this.textBox59.TabIndex = 57;
-            this.textBox59.Text = "AT+CGATT=1";
-            // 
-            // button101
-            // 
-            this.button101.Location = new System.Drawing.Point(6, 75);
-            this.button101.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button101.Name = "button101";
-            this.button101.Size = new System.Drawing.Size(147, 24);
-            this.button101.TabIndex = 58;
-            this.button101.Text = "DATA DISCONNECT";
-            this.button101.UseVisualStyleBackColor = true;
-            this.button101.Click += new System.EventHandler(this.button101_Click);
-            // 
-            // textBox60
-            // 
-            this.textBox60.Location = new System.Drawing.Point(157, 75);
-            this.textBox60.Name = "textBox60";
-            this.textBox60.Size = new System.Drawing.Size(310, 21);
-            this.textBox60.TabIndex = 59;
-            this.textBox60.Text = "AT+CGATT=0";
-            // 
-            // textBox61
-            // 
-            this.textBox61.Location = new System.Drawing.Point(157, 166);
-            this.textBox61.Name = "textBox61";
-            this.textBox61.Size = new System.Drawing.Size(310, 21);
-            this.textBox61.TabIndex = 61;
-            this.textBox61.Text = "AT+CEREG?";
-            // 
-            // button62
-            // 
-            this.button62.Location = new System.Drawing.Point(6, 166);
-            this.button62.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button62.Name = "button62";
-            this.button62.Size = new System.Drawing.Size(147, 24);
-            this.button62.TabIndex = 60;
-            this.button62.Text = "NW STATUS";
-            this.button62.UseVisualStyleBackColor = true;
-            this.button62.Click += new System.EventHandler(this.button62_Click_1);
-            // 
-            // gbDeviceLog
-            // 
-            this.gbDeviceLog.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbDeviceLog.Controls.Add(this.listView3);
-            this.gbDeviceLog.Location = new System.Drawing.Point(532, 45);
-            this.gbDeviceLog.Name = "gbDeviceLog";
-            this.gbDeviceLog.Size = new System.Drawing.Size(635, 668);
-            this.gbDeviceLog.TabIndex = 44;
-            this.gbDeviceLog.TabStop = false;
-            this.gbDeviceLog.Text = "AT command Message";
-            // 
-            // listView3
-            // 
-            this.listView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView3.HideSelection = false;
-            this.listView3.Location = new System.Drawing.Point(3, 17);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(629, 648);
-            this.listView3.TabIndex = 23;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            this.listView3.SelectedIndexChanged += new System.EventHandler(this.listView3_SelectedIndexChanged);
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.label47);
-            this.groupBox10.Controls.Add(this.label46);
-            this.groupBox10.Controls.Add(this.label45);
-            this.groupBox10.Controls.Add(this.label44);
-            this.groupBox10.Controls.Add(this.lbModemVer);
-            this.groupBox10.Controls.Add(this.textBox89);
-            this.groupBox10.Controls.Add(this.lbIccid);
-            this.groupBox10.Controls.Add(this.textBox87);
-            this.groupBox10.Controls.Add(this.textBox86);
-            this.groupBox10.Controls.Add(this.button87);
-            this.groupBox10.Controls.Add(this.textBox85);
-            this.groupBox10.Controls.Add(this.textBox57);
-            this.groupBox10.Controls.Add(this.textBox40);
-            this.groupBox10.Controls.Add(this.textBox38);
-            this.groupBox10.Controls.Add(this.textBox33);
-            this.groupBox10.Controls.Add(this.button71);
-            this.groupBox10.Controls.Add(this.button83);
-            this.groupBox10.Controls.Add(this.textBox44);
-            this.groupBox10.Controls.Add(this.button88);
-            this.groupBox10.Controls.Add(this.textBox45);
-            this.groupBox10.Controls.Add(this.textBox46);
-            this.groupBox10.Controls.Add(this.textBox47);
-            this.groupBox10.Controls.Add(this.textBox48);
-            this.groupBox10.Controls.Add(this.textBox49);
-            this.groupBox10.Controls.Add(this.button89);
-            this.groupBox10.Controls.Add(this.button90);
-            this.groupBox10.Controls.Add(this.button91);
-            this.groupBox10.Location = new System.Drawing.Point(24, 18);
-            this.groupBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox10.Size = new System.Drawing.Size(490, 351);
-            this.groupBox10.TabIndex = 40;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "MODULE INFORMATION";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(54, 290);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(97, 12);
-            this.label47.TabIndex = 71;
-            this.label47.Text = "버전 응답 메시지";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(56, 236);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(98, 12);
-            this.label46.TabIndex = 70;
-            this.label46.Text = "IMEI 응답 메시지";
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(47, 178);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(105, 12);
-            this.label45.TabIndex = 69;
-            this.label45.Text = "ICCID 응답 메시지";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(55, 122);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(98, 12);
-            this.label44.TabIndex = 68;
-            this.label44.Text = "IMSI 응답 메시지";
-            // 
-            // lbModemVer
-            // 
-            this.lbModemVer.Location = new System.Drawing.Point(277, 262);
-            this.lbModemVer.Name = "lbModemVer";
-            this.lbModemVer.Size = new System.Drawing.Size(190, 21);
-            this.lbModemVer.TabIndex = 67;
-            // 
-            // textBox89
-            // 
-            this.textBox89.Location = new System.Drawing.Point(277, 206);
-            this.textBox89.Name = "textBox89";
-            this.textBox89.Size = new System.Drawing.Size(190, 21);
-            this.textBox89.TabIndex = 66;
-            // 
-            // lbIccid
-            // 
-            this.lbIccid.Location = new System.Drawing.Point(277, 150);
-            this.lbIccid.Name = "lbIccid";
-            this.lbIccid.Size = new System.Drawing.Size(190, 21);
-            this.lbIccid.TabIndex = 65;
-            // 
-            // textBox87
-            // 
-            this.textBox87.Location = new System.Drawing.Point(277, 93);
-            this.textBox87.Name = "textBox87";
-            this.textBox87.Size = new System.Drawing.Size(190, 21);
-            this.textBox87.TabIndex = 64;
-            // 
-            // textBox86
-            // 
-            this.textBox86.Location = new System.Drawing.Point(277, 65);
-            this.textBox86.Name = "textBox86";
-            this.textBox86.Size = new System.Drawing.Size(190, 21);
-            this.textBox86.TabIndex = 63;
-            // 
-            // button87
-            // 
-            this.button87.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button87.Location = new System.Drawing.Point(132, 316);
-            this.button87.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button87.Name = "button87";
-            this.button87.Size = new System.Drawing.Size(156, 24);
-            this.button87.TabIndex = 43;
-            this.button87.Text = "모듈 정보 조회";
-            this.button87.UseVisualStyleBackColor = true;
-            this.button87.Click += new System.EventHandler(this.button87_Click);
-            // 
-            // textBox85
-            // 
-            this.textBox85.Location = new System.Drawing.Point(277, 36);
-            this.textBox85.Name = "textBox85";
-            this.textBox85.Size = new System.Drawing.Size(190, 21);
-            this.textBox85.TabIndex = 62;
-            // 
-            // textBox57
-            // 
-            this.textBox57.Location = new System.Drawing.Point(158, 287);
-            this.textBox57.Name = "textBox57";
-            this.textBox57.Size = new System.Drawing.Size(114, 21);
-            this.textBox57.TabIndex = 53;
-            // 
-            // textBox40
-            // 
-            this.textBox40.Location = new System.Drawing.Point(158, 233);
-            this.textBox40.Name = "textBox40";
-            this.textBox40.Size = new System.Drawing.Size(114, 21);
-            this.textBox40.TabIndex = 52;
-            this.textBox40.Text = "+CGSN:";
-            // 
-            // textBox38
-            // 
-            this.textBox38.Location = new System.Drawing.Point(158, 175);
-            this.textBox38.Name = "textBox38";
-            this.textBox38.Size = new System.Drawing.Size(114, 21);
-            this.textBox38.TabIndex = 51;
-            this.textBox38.Text = "+MUICCID:";
-            // 
-            // textBox33
-            // 
-            this.textBox33.Location = new System.Drawing.Point(158, 119);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.Size = new System.Drawing.Size(114, 21);
-            this.textBox33.TabIndex = 50;
-            // 
-            // button71
-            // 
-            this.button71.Location = new System.Drawing.Point(7, 148);
-            this.button71.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button71.Name = "button71";
-            this.button71.Size = new System.Drawing.Size(147, 24);
-            this.button71.TabIndex = 40;
-            this.button71.Text = "ICCID";
-            this.button71.UseVisualStyleBackColor = true;
-            this.button71.Click += new System.EventHandler(this.button71_Click);
-            // 
-            // button83
-            // 
-            this.button83.Location = new System.Drawing.Point(7, 33);
-            this.button83.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button83.Name = "button83";
-            this.button83.Size = new System.Drawing.Size(147, 24);
-            this.button83.TabIndex = 39;
-            this.button83.Text = "제조사";
-            this.button83.UseVisualStyleBackColor = true;
-            this.button83.Click += new System.EventHandler(this.button83_Click);
-            // 
-            // textBox44
-            // 
-            this.textBox44.Location = new System.Drawing.Point(158, 260);
-            this.textBox44.Name = "textBox44";
-            this.textBox44.Size = new System.Drawing.Size(114, 21);
-            this.textBox44.TabIndex = 22;
-            this.textBox44.Text = "AT+CGMR";
-            // 
-            // button88
-            // 
-            this.button88.Location = new System.Drawing.Point(7, 260);
-            this.button88.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button88.Name = "button88";
-            this.button88.Size = new System.Drawing.Size(147, 24);
-            this.button88.TabIndex = 21;
-            this.button88.Text = "FW VERSION";
-            this.button88.UseVisualStyleBackColor = true;
-            this.button88.Click += new System.EventHandler(this.button88_Click);
-            // 
-            // textBox45
-            // 
-            this.textBox45.Location = new System.Drawing.Point(157, 148);
-            this.textBox45.Name = "textBox45";
-            this.textBox45.Size = new System.Drawing.Size(114, 21);
-            this.textBox45.TabIndex = 20;
-            this.textBox45.Text = "AT+MUICCID";
-            // 
-            // textBox46
-            // 
-            this.textBox46.Location = new System.Drawing.Point(158, 91);
-            this.textBox46.Name = "textBox46";
-            this.textBox46.Size = new System.Drawing.Size(114, 21);
-            this.textBox46.TabIndex = 19;
-            this.textBox46.Text = "AT+CIMI";
-            // 
-            // textBox47
-            // 
-            this.textBox47.Location = new System.Drawing.Point(157, 63);
-            this.textBox47.Name = "textBox47";
-            this.textBox47.Size = new System.Drawing.Size(114, 21);
-            this.textBox47.TabIndex = 18;
-            this.textBox47.Text = "AT+CGMM";
-            // 
-            // textBox48
-            // 
-            this.textBox48.Location = new System.Drawing.Point(157, 33);
-            this.textBox48.Name = "textBox48";
-            this.textBox48.Size = new System.Drawing.Size(114, 21);
-            this.textBox48.TabIndex = 17;
-            this.textBox48.Text = "AT+CGMI";
-            // 
-            // textBox49
-            // 
-            this.textBox49.Location = new System.Drawing.Point(158, 204);
-            this.textBox49.Name = "textBox49";
-            this.textBox49.Size = new System.Drawing.Size(114, 21);
-            this.textBox49.TabIndex = 15;
-            this.textBox49.Text = "AT+CGSN=1";
-            // 
-            // button89
-            // 
-            this.button89.Location = new System.Drawing.Point(7, 204);
-            this.button89.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button89.Name = "button89";
-            this.button89.Size = new System.Drawing.Size(147, 24);
-            this.button89.TabIndex = 14;
-            this.button89.Text = "IMEI";
-            this.button89.UseVisualStyleBackColor = true;
-            this.button89.Click += new System.EventHandler(this.button89_Click);
-            // 
-            // button90
-            // 
-            this.button90.Location = new System.Drawing.Point(7, 91);
-            this.button90.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button90.Name = "button90";
-            this.button90.Size = new System.Drawing.Size(147, 24);
-            this.button90.TabIndex = 10;
-            this.button90.Text = "IMSI";
-            this.button90.UseVisualStyleBackColor = true;
-            this.button90.Click += new System.EventHandler(this.button90_Click);
-            // 
-            // button91
-            // 
-            this.button91.Location = new System.Drawing.Point(6, 63);
-            this.button91.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button91.Name = "button91";
-            this.button91.Size = new System.Drawing.Size(147, 24);
-            this.button91.TabIndex = 8;
-            this.button91.Text = "모델";
-            this.button91.UseVisualStyleBackColor = true;
-            this.button91.Click += new System.EventHandler(this.button91_Click);
             // 
             // tabModule
             // 
@@ -1810,37 +1107,6 @@
             this.webBrowser1.Url = new System.Uri("", System.UriKind.Relative);
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
-            // button81
-            // 
-            this.button81.Location = new System.Drawing.Point(1098, 11);
-            this.button81.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button81.Name = "button81";
-            this.button81.Size = new System.Drawing.Size(71, 24);
-            this.button81.TabIndex = 41;
-            this.button81.Text = "엑셀 쓰기";
-            this.button81.UseVisualStyleBackColor = true;
-            this.button81.Click += new System.EventHandler(this.button63_Click);
-            // 
-            // button72
-            // 
-            this.button72.Location = new System.Drawing.Point(1020, 11);
-            this.button72.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button72.Name = "button72";
-            this.button72.Size = new System.Drawing.Size(70, 24);
-            this.button72.TabIndex = 42;
-            this.button72.Text = "엑셀 읽기";
-            this.button72.UseVisualStyleBackColor = true;
-            this.button72.Click += new System.EventHandler(this.button62_Click);
-            // 
-            // lbActionState
-            // 
-            this.lbActionState.AutoSize = true;
-            this.lbActionState.Location = new System.Drawing.Point(294, 16);
-            this.lbActionState.Name = "lbActionState";
-            this.lbActionState.Size = new System.Drawing.Size(43, 12);
-            this.lbActionState.TabIndex = 58;
-            this.lbActionState.Text = "closed";
-            // 
             // label30
             // 
             this.label30.AutoSize = true;
@@ -1914,15 +1180,6 @@
             this.label32.TabIndex = 76;
             this.label32.Text = "일련번호 :";
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 5000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // timer2
-            // 
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -1938,19 +1195,9 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tabCOM.ResumeLayout(false);
-            this.tabCOM.PerformLayout();
-            this.groupBox23.ResumeLayout(false);
-            this.groupBox23.PerformLayout();
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
-            this.gbDeviceLog.ResumeLayout(false);
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
             this.tabModule.ResumeLayout(false);
             this.groupBox28.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
@@ -1975,82 +1222,16 @@
         }
 
         #endregion
-        private System.IO.Ports.SerialPort serialPort1;
-        private System.Windows.Forms.ComboBox cBoxBaudRate;
-        private System.Windows.Forms.ComboBox cBoxCOMPORT;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button72;
-        private System.Windows.Forms.Button button81;
         private System.Windows.Forms.TextBox tBoxDeviceModel;
         private System.Windows.Forms.TextBox tbSvcCd;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label lbActionState;
         private System.Windows.Forms.TextBox tBoxDeviceSN;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox tBoxDeviceVer;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.CheckBox cbDTR;
-        private System.Windows.Forms.CheckBox cbRTS;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabCOM;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.GroupBox groupBox23;
-        private System.Windows.Forms.Button button128;
-        private System.Windows.Forms.TextBox textBox81;
-        private System.Windows.Forms.Button button121;
-        private System.Windows.Forms.TextBox textBox80;
-        private System.Windows.Forms.Button button120;
-        private System.Windows.Forms.TextBox textBox79;
-        private System.Windows.Forms.Button button63;
-        private System.Windows.Forms.TextBox textBox64;
-        private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.Button button119;
-        private System.Windows.Forms.TextBox textBox78;
-        private System.Windows.Forms.Button button86;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.Button button99;
-        private System.Windows.Forms.TextBox textBox58;
-        private System.Windows.Forms.Button button100;
-        private System.Windows.Forms.TextBox textBox59;
-        private System.Windows.Forms.Button button101;
-        private System.Windows.Forms.TextBox textBox60;
-        private System.Windows.Forms.TextBox textBox61;
-        private System.Windows.Forms.Button button62;
-        private System.Windows.Forms.GroupBox gbDeviceLog;
-        private System.Windows.Forms.ListView listView3;
-        private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.TextBox lbModemVer;
-        private System.Windows.Forms.TextBox textBox89;
-        private System.Windows.Forms.TextBox lbIccid;
-        private System.Windows.Forms.TextBox textBox87;
-        private System.Windows.Forms.TextBox textBox86;
-        private System.Windows.Forms.Button button87;
-        private System.Windows.Forms.TextBox textBox85;
-        private System.Windows.Forms.TextBox textBox57;
-        private System.Windows.Forms.TextBox textBox40;
-        private System.Windows.Forms.TextBox textBox38;
-        private System.Windows.Forms.TextBox textBox33;
-        private System.Windows.Forms.Button button71;
-        private System.Windows.Forms.Button button83;
-        private System.Windows.Forms.TextBox textBox44;
-        private System.Windows.Forms.Button button88;
-        private System.Windows.Forms.TextBox textBox45;
-        private System.Windows.Forms.TextBox textBox46;
-        private System.Windows.Forms.TextBox textBox47;
-        private System.Windows.Forms.TextBox textBox48;
-        private System.Windows.Forms.TextBox textBox49;
-        private System.Windows.Forms.Button button89;
-        private System.Windows.Forms.Button button90;
-        private System.Windows.Forms.Button button91;
         private System.Windows.Forms.TabPage tabModule;
         private System.Windows.Forms.GroupBox groupBox28;
         private System.Windows.Forms.ListView listView11;
